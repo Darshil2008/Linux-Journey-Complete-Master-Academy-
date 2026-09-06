@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Journey: Complete Master Academy & Canva Presentation</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-navbar">
+    <div class="brand-container">
+      <div class="brand-icon">🐧</div>
+      <div class="brand-title">
+        <h1>Linux Journey</h1>
+        <span class="brand-subtitle">Complete Master Academy</span>
+      </div>
+    </div>
+
+    <!-- Navigation View Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab-btn active" data-tab="tab-presentation">
+        <span>🖥️</span> Slides Deck (37)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-reader">
+        <span>📖</span> Course Reader (91)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-flashcards">
+        <span>🎴</span> Flashcards (47)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-quiz">
+        <span>🎮</span> Master Quiz (20)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-matrix">
+        <span>📊</span> Reference Tables
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-blitz">
+        <span>⚡</span> 60s Blitz
+      </button>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="nav-actions">
+      <a href="Linux_Simple_Summary_Flashcards.pdf" download="Linux_Simple_Summary_Flashcards.pdf" class="btn-canva-action btn-primary" title="Download Complete 12-Page Space-Optimized Master PDF">
+        <span>📥</span> Master PDF (12P)
+      </a>
+      <button onclick="window.print()" class="btn-canva-action btn-outline" title="Print Study Guide">
+        <span>🖨️</span> Print
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="main-wrapper">
+
+    <!-- ==================== TAB 1: PRESENTATION SLIDES (ACTIVE DEFAULT) ==================== -->
+    <section id="tab-presentation" class="tab-view active">
+      <div class="presentation-container">
+        
+        <!-- Slide Viewport Screen -->
+        <div class="slide-viewport" id="slideViewport">
+          <div class="slide-content-stage" id="slideContentStage">
+            <!-- Dynamic Slide Content Loaded via app.js -->
+          </div>
+        </div>
+
+        <!-- Slide Presentation Controller Bar -->
+        <div class="slide-controls">
+          <div class="slide-controls-left">
+            <button id="prevSlideBtn" class="ctrl-btn" title="Previous Slide (Left Arrow)">◀</button>
+            <button id="nextSlideBtn" class="ctrl-btn" title="Next Slide (Right Arrow / Spacebar)">▶</button>
+            <select id="slideSelectDropdown" class="slide-select" title="Jump to Slide">
+              <!-- Options populated via JS -->
+            </select>
+          </div>
+
+          <div class="slide-progress-container">
+            <div class="slide-progress-bar">
+              <div class="slide-progress-fill" id="slideProgressFill"></div>
+            </div>
+            <div class="slide-number-indicator" id="slideCounter">1 / 37</div>
+          </div>
+
+          <div class="slide-controls-right">
+            <button id="fullscreenBtn" class="ctrl-btn" title="Toggle Fullscreen (F)">⛶</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: COURSE READER & EXPLORER ==================== -->
+    <section id="tab-reader" class="tab-view">
+      <div class="reader-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="reader-sidebar">
+          <div class="sidebar-search-box">
+            <input type="text" id="sidebarSearchInput" class="search-input" placeholder="🔍 Search 91 lessons..." autocomplete="off">
+          </div>
+          <div class="sidebar-modules-list" id="sidebarModulesList">
+            <!-- Dynamic Modules & Lessons via app.js -->
+          </div>
+        </aside>
+
+        <!-- Main Reading Stage -->
+        <main class="reader-content">
+          <div id="readerStage">
+            <!-- Active Lesson & Quizzes via app.js -->
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: FLASHCARDS ==================== -->
+    <section id="tab-flashcards" class="tab-view">
+      <div class="flashcards-header">
+        <h2>Linux Master Flashcards 🎴</h2>
+        <p>Click any card to flip and reveal the answer. Filter across all 8 core modules and track your mastery!</p>
+      </div>
+
+      <!-- Flashcards Toolbar -->
+      <div class="flashcards-toolbar">
+        <div class="filter-tags">
+          <button class="tag-btn active" data-cat="All">All Modules (47)</button>
+          <button class="tag-btn" data-cat="Getting Started">🌱 1. Getting Started</button>
+          <button class="tag-btn" data-cat="Command Line">🐚 2. Command Line</button>
+          <button class="tag-btn" data-cat="Text-Fu">🥋 3. Text-Fu</button>
+          <button class="tag-btn" data-cat="Advanced Text-Fu">🎯 4. Vim & Regex</button>
+          <button class="tag-btn" data-cat="User Management">👥 5. Users</button>
+          <button class="tag-btn" data-cat="Permissions">🔒 6. Permissions</button>
+          <button class="tag-btn" data-cat="Processes">⚙️ 7. Processes</button>
+          <button class="tag-btn" data-cat="Packages">📦 8. Packages</button>
+        </div>
+
+        <div class="flashcard-stats">
+          <span class="stat-badge stat-learned" id="statLearned">0 Mastered</span>
+          <span class="stat-badge stat-review" id="statReview">0 Needs Practice</span>
+          <button id="shuffleCardsBtn" class="btn-canva-action btn-outline" style="padding:4px 12px; font-size:0.78rem;">🔀 Shuffle</button>
+        </div>
+      </div>
+
+      <!-- Flashcards Grid -->
+      <div class="flashcards-grid" id="flashcardsGrid">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: MASTER QUIZ ==================== -->
+    <section id="tab-quiz" class="tab-view">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <span class="quiz-progress-num" id="quizProgressNum">Question 1 of 20</span>
+          <span class="quiz-score-badge" id="quizScoreBadge">⭐ Score: 0 / 20</span>
+        </div>
+
+        <div class="quiz-question-box">
+          <h3 id="quizQuestionText">Loading Question...</h3>
+          <div class="quiz-options-list" id="quizOptionsList">
+            <!-- Dynamic Options -->
+          </div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <div style="text-align: right;">
+            <button id="quizNextBtn" class="btn-canva-action btn-primary" style="display:none;">Next Question ➔</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: REFERENCE MATRICES ==================== -->
+    <section id="tab-matrix" class="tab-view">
+      <div class="matrix-container">
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">
+          Linux Journey: Complete 8-Module Master Reference Matrix 🐧
+        </h2>
+        <p style="color:var(--text-muted); margin-bottom:16px; font-size:0.9rem;">
+          The complete architectural blueprint of the Linux Master curriculum.
+        </p>
+
+        <table class="custom-table" style="margin-bottom:32px;">
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Core Concepts</th>
+              <th>Key Tools & Files</th>
+              <th>Golden Exam Rule</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Getting Started</strong></td>
+              <td>UNIX 1969, GNU 1983, Linux 1991, 3 Layers, Distros</td>
+              <td>Debian, Ubuntu, RHEL, Fedora, Arch, Kali</td>
+              <td>Distro = Kernel + GNU + GUI + App Store</td>
+            </tr>
+            <tr>
+              <td><strong>2. Command Line</strong></td>
+              <td>19 Essential Shell Commands</td>
+              <td>pwd, cd, ls, touch, file, cat, rm, cp, mv</td>
+              <td>No Trash Can in terminal; check location first!</td>
+            </tr>
+            <tr>
+              <td><strong>3. Text-Fu</strong></td>
+              <td>Streams (stdin/out/err), Pipes, Slicing & Filters</td>
+              <td>&gt;, &gt;&gt;, |, tee, cut, sort, uniq, grep</td>
+              <td>Pipes connect stdout of left to stdin of right</td>
+            </tr>
+            <tr>
+              <td><strong>4. Advanced Text-Fu</strong></td>
+              <td>Vim modal editing, Emacs buffers, Regex patterns</td>
+              <td>Vim (:wq, :q!), Emacs, . , ^ , $ , * , []</td>
+              <td>Vim Normal vs Insert mode; Regex for search</td>
+            </tr>
+            <tr>
+              <td><strong>5. User Management</strong></td>
+              <td>UID/GID, /etc/passwd, shadow, root, sudo</td>
+              <td>/etc/passwd, shadow, group, useradd, sudo</td>
+              <td>UID 0 is root; edit sudoers ONLY with visudo</td>
+            </tr>
+            <tr>
+              <td><strong>6. Permissions</strong></td>
+              <td>rwx triad, chmod octal, umask, SUID, SGID, Sticky</td>
+              <td>chmod 755/644, chown, umask 022, chmod +t</td>
+              <td>r=4, w=2, x=1; Sticky on /tmp protects users</td>
+            </tr>
+            <tr>
+              <td><strong>7. Processes</strong></td>
+              <td>PID, ps aux, top, signals, niceness, jobs</td>
+              <td>ps aux, top, kill -9/-15, nice, /proc, fg, bg</td>
+              <td>SIGTERM 15 is polite; SIGKILL 9 cannot be caught</td>
+            </tr>
+            <tr>
+              <td><strong>8. Packages</strong></td>
+              <td>.deb vs .rpm, repositories, source compiling, tar</td>
+              <td>apt install, dnf install, make, tar -czvf</td>
+              <td>High-level managers resolve dependencies auto</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Permissions Reference Matrix -->
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">
+          Permissions & Special Bits Quick Reference 🔒
+        </h2>
+        <table class="custom-table" style="margin-bottom:32px;">
+          <thead>
+            <tr>
+              <th>Permission Bit</th>
+              <th>Numeric / Octal</th>
+              <th>Symbolic</th>
+              <th>Effect & Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Read / Write / Exec</strong></td>
+              <td><code>755</code></td>
+              <td><code>-rwxr-xr-x</code></td>
+              <td>Owner has full rights (7); group & others read/execute (5). Standard scripts.</td>
+            </tr>
+            <tr>
+              <td><strong>Read / Write Only</strong></td>
+              <td><code>644</code></td>
+              <td><code>-rw-r--r--</code></td>
+              <td>Owner read/write (6); group & others read only (4). Standard documents.</td>
+            </tr>
+            <tr>
+              <td><strong>SUID (Set User ID)</strong></td>
+              <td><code>4000</code></td>
+              <td><code>-rwsr-xr-x</code></td>
+              <td>Runs binary with rights of file OWNER (e.g. <code>/usr/bin/passwd</code> runs as root).</td>
+            </tr>
+            <tr>
+              <td><strong>SGID (Set Group ID)</strong></td>
+              <td><code>2000</code></td>
+              <td><code>drwxrwsr-x</code></td>
+              <td>On directories: new files inherit parent directory's group for collaboration.</td>
+            </tr>
+            <tr>
+              <td><strong>Sticky Bit</strong></td>
+              <td><code>1000</code></td>
+              <td><code>drwxrwxrwt</code></td>
+              <td>On shared folders: only file owner can delete/rename files (e.g. <code>/tmp</code>).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: 60-SECOND EXAM BLITZ ==================== -->
+    <section id="tab-blitz" class="tab-view">
+      <div class="matrix-container" style="border-left: 6px solid var(--primary);">
+        <h2 style="font-size:1.8rem; font-weight:800; color:var(--primary-dark); margin-bottom:12px;">
+          ⚡ 60-Second Final Linux Master Exam Blitz & Golden Rules
+        </h2>
+        <p style="font-size:1rem; color:var(--text-main); margin-bottom:20px; font-weight:600;">
+          Memorize these golden facts before any Linux interview or certification exam!
+        </p>
+
+        <div style="background:#fff1f2; border:1.5px solid #fda4af; padding:16px 20px; border-radius:12px; margin-bottom:20px;">
+          <h3 style="color:#b91c1c; font-size:1.1rem; margin-bottom:10px;">⚠️ Pete's 5 Golden Linux Safety Rules:</h3>
+          <ul style="padding-left:20px; font-size:0.92rem; color:#881337; line-height:1.6;">
+            <li><strong>1. No Trash Can in Terminal:</strong> <code>rm</code> deletes permanently with zero undo. Check your location with <code>pwd</code>!</li>
+            <li><strong>2. Preview Wildcards:</strong> Before typing <code>rm *.tmp</code>, test what will match by running <code>ls *.tmp</code>.</li>
+            <li><strong>3. Overwrite (<code>&gt;</code>) vs Append (<code>&gt;&gt;</code>):</strong> <code>&gt;</code> wipes destination completely; <code>&gt;&gt;</code> safely adds to bottom.</li>
+            <li><strong>4. Edit Sudoers with Visudo:</strong> Never edit <code>/etc/sudoers</code> with nano or vim directly; <code>visudo</code> prevents syntax lockouts!</li>
+            <li><strong>5. Respect Root Privileges:</strong> UID 0 can delete critical files instantly. Use <code>sudo</code> only when needed.</li>
+          </ul>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="info-card" style="background:#eff6ff;">
+            <strong>Origins:</strong> UNIX (1969 Bell Labs) ➔ GNU (1983 Richard Stallman) ➔ Linux Kernel (1991 Linus Torvalds).
+          </div>
+          <div class="info-card" style="background:#f0fdf4;">
+            <strong>Distro Families:</strong> Debian (.deb/APT), Ubuntu (LTS 5yr), Fedora (RPM/DNF modern), RHEL (10yr enterprise), Arch (Pacman rolling).
+          </div>
+          <div class="info-card" style="background:#faf5ff;">
+            <strong>Navigation & Files:</strong> <code>pwd</code> (where you are), <code>cd ..</code> (up 1), <code>ls -la</code> (all dotfiles), <code>touch</code> (empty/time), <code>file</code> (magic bytes).
+          </div>
+          <div class="info-card" style="background:#fffbeb;">
+            <strong>Text-Fu Streams:</strong> stdin (0), stdout (1), stderr (2). Pipes (<code>|</code>) connect stdout of left to stdin of right. <code>tail -f</code> follows logs live.
+          </div>
+          <div class="info-card" style="background:#f0fdfa;">
+            <strong>Search & Clean:</strong> <code>grep -i</code> (ignore case), <code>grep -v</code> (invert), <code>sort -n</code> (numeric), <code>uniq -c</code> (count adjacent duplicates).
+          </div>
+          <div class="info-card" style="background:#fdf2f8;">
+            <strong>Vim & Regex:</strong> Vim is modal (Normal vs Insert). <code>:wq</code> saves & quits; <code>:q!</code> force quits. <code>^</code> starts line, <code>$</code> ends line.
+          </div>
+          <div class="info-card" style="background:#f5f3ff;">
+            <strong>Users & Databases:</strong> UID 0 is root. <code>/etc/passwd</code> (7 fields), <code>/etc/shadow</code> (encrypted hashes), <code>/etc/group</code>.
+          </div>
+          <div class="info-card" style="background:#ecfdf5;">
+            <strong>Permissions:</strong> Read=4, Write=2, Execute=1. <code>755</code> (scripts), <code>644</code> (docs). SUID runs as owner; Sticky (+t) protects <code>/tmp</code>.
+          </div>
+          <div class="info-card" style="background:#f8fafc; border: 1.5px solid #6366f1;">
+            <strong>Processes & Packages:</strong> <code>ps aux</code>, <code>top</code>, <code>kill -15</code> (clean), <code>kill -9</code> (force). <code>apt</code> / <code>dnf</code> resolve dependencies. <code>tar -czvf</code> / <code>tar -xzvf</code>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Linux Complete Curriculum Data (8 Modules, 91 Lessons, 414 Quizzes) -->
+  <script src="linux_course_data.js"></script>
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
